@@ -1,0 +1,17 @@
+{
+  "name": "angular-socketio-chat",
+  "version": "1.0.0",
+  "description": "Angular chat application with socket.io library",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd frontend; ng serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrgioPeca88/angular-socketio-chat.git"
+  },
+  "keywords": [],
+  "author": "CrgioPeca88",
+  "license": "ISC",
+  "homepage": "https://github.com/CrgioPeca88/angular-socketio-chat#readme"
+}

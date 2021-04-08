@@ -1,2 +1,3 @@
 # angular-socketio-chat
-Angular chat application wuth socket.io
+
+Angular chat application with the socket.io library.
