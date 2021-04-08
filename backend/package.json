@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend project for the chat",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrgioPeca88/angular-socketio-chat.git"
+  },
+  "keywords": [],
+  "author": "CrgioPeca88",
+  "license": "ISC",
+  "homepage": "https://github.com/CrgioPeca88/angular-socketio-chat#readme"
+}
