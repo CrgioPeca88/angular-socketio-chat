@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Angular chat application with socket.io library",
   "scripts": {
+    "install-frontend": "cd frontend; npm install",
     "frontend": "cd frontend; ng serve",
+    "install-backend": "cd backend; npm install",
     "backend": "cd backend; npm run webpack"
   },
   "repository": {
