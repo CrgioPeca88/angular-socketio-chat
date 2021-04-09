@@ -2,9 +2,9 @@
   "name": "angular-socketio-chat",
   "version": "1.0.0",
   "description": "Angular chat application with socket.io library",
-  "main": "index.js",
   "scripts": {
-    "frontend": "cd frontend; ng serve"
+    "frontend": "cd frontend; ng serve",
+    "backend": "cd backend; npm run webpack"
   },
   "repository": {
     "type": "git",
