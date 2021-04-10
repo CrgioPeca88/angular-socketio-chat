@@ -6,7 +6,7 @@
     "install-frontend": "cd frontend; npm install",
     "frontend": "cd frontend; ng serve",
     "install-backend": "cd backend; npm install",
-    "backend": "cd backend; npm run webpack; node build/index.js"
+    "backend": "cd backend; npm run webpack"
   },
   "repository": {
     "type": "git",
