@@ -2,11 +2,11 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
 
-const app = express();
+// Assets
+//import { PORT } from '@config/constants';
+import { PORT } from './config/constants';
 
-const {
-  PORT = 3000,
-} = process.env;
+const app = express();
 
 app.get('/', (req: Request, res: Response) => {
   res.send({

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "backend project for the chat",
   "scripts": {
-    "backendstart": "NODE_ENV=development nodemon build/index.js",
+    "backendstart": "NODE_ENV=development nodemon dist/bundle.js",
     "webpack": "NODE_ENV=development webpack"
   },
   "repository": {

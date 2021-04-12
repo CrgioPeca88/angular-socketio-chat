@@ -13,13 +13,6 @@ module.exports = {
   watch: NODE_ENV === 'development',
   target: 'node',
   externals: [ nodeExternals() ],
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'index.js'
-  },
-  resolve: {
-    extensions: ['.ts', '.js'],
-  },
   plugins: [
     new WebpackShellPluginNext({
       onBuildStart:{
@@ -37,7 +30,15 @@ module.exports = {
   module: {
     rules: [{
       test: /\.ts$/,
-      use: ['ts-loader']
+      use: ['ts-loader'],
+      exclude: /node_modules/
     }]
-  }
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
 }

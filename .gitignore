@@ -2,7 +2,7 @@
 
 # compiled output
 frontend/dist
-backend/build
+backend/dist
 
 # dependencies
 frontend/node_modules
