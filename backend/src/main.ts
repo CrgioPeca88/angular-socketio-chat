@@ -2,17 +2,18 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
 import { createServer } from 'http';
+import { Socket, Server } from "socket.io";
 
 // Assets
 import { PORT } from './config/constants';
 
 const app = express();
 const httpServer = createServer(app);
-const sio = require('socket.io')(httpServer, {
+const sio = new Server(httpServer, {
   cors: {
     origin: true,
     credentials: true,
-    methods: ['GET', 'POST']
+    methods: ["GET", "POST"]
   }
 });
 
