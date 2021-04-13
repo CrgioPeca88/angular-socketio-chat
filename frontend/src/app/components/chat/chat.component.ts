@@ -1,6 +1,9 @@
 // Depenencies
 import { Component } from '@angular/core';
 
+// Assets
+import { SocketService } from '@shared/services/socket.service';
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -9,6 +12,8 @@ import { Component } from '@angular/core';
 export class ChatComponent {
   title = 'Componente chat';
 
-  constructor() {}
+  constructor() {
+    
+  }
 
 }

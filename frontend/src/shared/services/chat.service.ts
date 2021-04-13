@@ -4,11 +4,6 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SocketService {
+export class ChatService {
   constructor() {}
-
-  getSaludo(): void {
-    console.log("Socket service works!");
-  }
-
 }
