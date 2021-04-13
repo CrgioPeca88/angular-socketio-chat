@@ -17,6 +17,10 @@ const sio = new Server(httpServer, {
   }
 });
 
+sio.on("connection", (socket: Socket) => {
+  console.log(`> Nuevo usuario conectado. [socket: ${socket}]`)
+});
+
 app.get('/', (req: Request, res: Response) => {
   res.send({
     message: 'hello world! by CrgioPeca888',
