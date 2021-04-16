@@ -23,7 +23,7 @@ sio.on("connection", (socket: Socket) => {
 
 app.get('/', (req: Request, res: Response) => {
   res.send({
-    message: 'hello world! by CrgioPeca888',
+    message: 'hello world! by CrgioPeca88',
   });
 });
 
