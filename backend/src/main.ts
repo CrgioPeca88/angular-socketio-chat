@@ -18,7 +18,7 @@ const sio = new Server(httpServer, {
 });
 
 sio.on("connection", (socket: Socket) => {
-  console.log(`> Nuevo usuario conectado. [socket: ${socket}]`)
+  console.log(`> Nuevo usuario conectado. [id: ${socket.id}]`)
 });
 
 app.get('/', (req: Request, res: Response) => {

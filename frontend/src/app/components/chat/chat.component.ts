@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 // Assets
-import { SocketService } from '@shared/services/socket.service';
+import { ChatService } from '@shared/services/chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -12,8 +12,8 @@ import { SocketService } from '@shared/services/socket.service';
 export class ChatComponent {
   title = 'Componente chat';
 
-  constructor() {
-    
+  constructor(private  chatService: ChatService) {
+
   }
 
 }
