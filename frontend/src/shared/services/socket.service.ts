@@ -6,19 +6,21 @@ import { io } from 'socket.io-client';
   providedIn: 'root'
 })
 export class SocketService {
-  private ioCli: any;
+  private sioCli: any;
 
   constructor() {
-    this.ioCli = io(
+    this.sioCli = io(
       "http://localhost:3000", {
         withCredentials: true,
         autoConnect: true
       }
     );
-  }
 
-  getSaludo(): void {
-    console.log("Socket service works!");
+    this.sioCli.emit("testServer");
+
+    this.sioCli.on("testClient", () => {
+      alert("From Server: Test OK! ");
+    });
   }
 
 }
