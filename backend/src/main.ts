@@ -7,6 +7,15 @@ import { Socket, Server } from "socket.io";
 // Assets
 import { PORT } from './config/constants';
 
+interface ClientData {
+  message: string;
+}
+
+interface ServerData {
+  message: string;
+  description: string;
+}
+
 const app = express();
 const httpServer = createServer(app);
 const sio = new Server(httpServer, {
@@ -19,9 +28,10 @@ const sio = new Server(httpServer, {
 
 sio.on("connection", (socket: Socket) => {
   console.log(`> Nuevo usuario conectado. [id: ${socket.id}]`)
-  socket.on("testServer", () => {
-    console.log("[SERVER] -> Llego a evento test");
-    socket.emit("testClient");
+  socket.on("testServer", (data: ClientData) => {
+    console.log(`[SERVER] -> data: ${data.message}`);
+    const dataServer: ServerData = {...data, description: "This is a description"};
+    socket.emit("testClient", dataServer);
   });
 });
 
