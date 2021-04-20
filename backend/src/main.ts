@@ -7,13 +7,11 @@ import { Socket, Server } from "socket.io";
 // Assets
 import { PORT } from './config/constants';
 
+type OwnerMessage = 'local' | 'remote';
+
 interface ClientData {
   message: string;
-}
-
-interface ServerData {
-  message: string;
-  description: string;
+  owner: OwnerMessage;
 }
 
 const app = express();
@@ -28,11 +26,16 @@ const sio = new Server(httpServer, {
 
 sio.on("connection", (socket: Socket) => {
   console.log(`> Nuevo usuario conectado. [id: ${socket.id}]`)
-  socket.on("testServer", (data: ClientData) => {
+
+  socket.on("serverSendTextMsg", (data: ClientData) => {
     console.log(`[SERVER] -> data: ${data.message}`);
-    const dataServer: ServerData = {...data, description: "This is a description"};
-    socket.emit("testClient", dataServer);
+    const dataServer: ClientData = {
+      message: `${data.message} mi hermano q tal!`,
+      owner: 'remote'
+    };
+    socket.emit("clientReceiveTextMsg", dataServer);
   });
+
 });
 
 app.get('/', (req: Request, res: Response) => {

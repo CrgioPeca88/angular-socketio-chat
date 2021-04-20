@@ -1,10 +1,20 @@
 // Dependencies
 import { Injectable } from '@angular/core';
 import { io } from 'socket.io-client';
+import { Observable } from 'rxjs';
 
 interface ServerData {
   message: string;
   description: string;
+}
+
+type OwnerMessage = 'local' | 'remote';
+
+interface EventsData {}
+
+export interface ChatMessage extends EventsData {
+  message: string;
+  owner: OwnerMessage;
 }
 
 @Injectable({
@@ -20,14 +30,18 @@ export class SocketService {
         autoConnect: true
       }
     );
+  }
 
-    this.sioCli.emit("testServer", { message: 'Test message from client'} );
+  public emit<M extends EventsData>(event: string, payload: M): any {
+    this.sioCli.emit(event, payload);
+  }
 
-    this.sioCli.on("testClient", (data: ServerData) => {
-      alert("From Server: Test OK! ");
-      console.log(`Data from server:`, data);
+  public on(event: string): Observable<ChatMessage> {
+    return new Observable(observer => {
+      this.sioCli.on(event, (remoteMessage: ChatMessage) => {
+        observer.next(remoteMessage);
+      });
     });
-
   }
 
 }
