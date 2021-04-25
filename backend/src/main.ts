@@ -7,6 +7,13 @@ import { Socket, Server } from "socket.io";
 // Assets
 import { PORT } from './config/constants';
 
+type OwnerMessage = 'local' | 'remote';
+
+interface ClientData {
+  message: string;
+  owner: OwnerMessage;
+}
+
 const app = express();
 const httpServer = createServer(app);
 const sio = new Server(httpServer, {
@@ -19,6 +26,16 @@ const sio = new Server(httpServer, {
 
 sio.on("connection", (socket: Socket) => {
   console.log(`> Nuevo usuario conectado. [id: ${socket.id}]`)
+
+  socket.on("serverSendTextMsg", (data: ClientData) => {
+    console.log(`[SERVER] -> data: ${data.message}`);
+    const dataServer: ClientData = {
+      message: `${data.message} mi hermano q tal!`,
+      owner: 'remote'
+    };
+    socket.emit("clientReceiveTextMsg", dataServer);
+  });
+
 });
 
 app.get('/', (req: Request, res: Response) => {
@@ -31,4 +48,10 @@ httpServer.listen(PORT, () => {
   console.log(`====================================`);
   console.log('> Server started at http://localhost:' + PORT);
   console.log(`====================================`);
+  console.log(`Testing rebase commit 1`);
+  console.log(`Testing rebase commit 2`);
+  console.log(`Testing rebase commit 3`);
+  console.log(`Testing rebase commit 4`);
 });
+bb680fd4ed5953c8732b025d9c9544d41d940622
+b11a53e50cc9c508329ab9235444b146062a6012
