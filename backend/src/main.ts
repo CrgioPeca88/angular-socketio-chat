@@ -48,4 +48,5 @@ httpServer.listen(PORT, () => {
   console.log(`====================================`);
   console.log('> Server started at http://localhost:' + PORT);
   console.log(`====================================`);
+  console.log(`Testing rebase commit 1`);
 });
