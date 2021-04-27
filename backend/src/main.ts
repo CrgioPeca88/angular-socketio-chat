@@ -47,5 +47,5 @@ app.get('/', (req: Request, res: Response) => {
 httpServer.listen(PORT, () => {
   console.log(`====================================`);
   console.log('> Server started at http://localhost:' + PORT);
-  console.log(`====================================`);
+  console.log(`=====================================`);
 });
