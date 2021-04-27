@@ -49,7 +49,7 @@ httpServer.listen(PORT, () => {
   console.log('> Server started at http://localhost:' + PORT);
   console.log(`=====================================`);
   console.log(`Prueba console 0`);
-  console.log(`Prueba Console 2`);
-  console.log(`Prueba Console 4`);
-  console.log(`Prueba Console 6`);
+  console.log(`Prueba Console 66`);
+  console.log(`Prueba Console 77`);
+  console.log(`Prueba Console 88`);
 });
