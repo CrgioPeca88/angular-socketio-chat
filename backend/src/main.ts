@@ -51,5 +51,4 @@ httpServer.listen(PORT, () => {
   console.log(`Testing rebase commit 1`);
   console.log(`Testing rebase commit 2`);
   console.log(`Testing rebase commit 3`);
-  console.log(`Testing rebase commit 4`);
 });
