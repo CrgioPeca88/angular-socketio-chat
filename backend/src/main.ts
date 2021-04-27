@@ -50,4 +50,6 @@ httpServer.listen(PORT, () => {
   console.log(`=====================================`);
   console.log(`Prueba console 0`);
   console.log(`Prueba Console 2`);
+  console.log(`Prueba Console 4`);
+  console.log(`Prueba Console 6`);
 });
