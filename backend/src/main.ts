@@ -48,4 +48,6 @@ httpServer.listen(PORT, () => {
   console.log(`====================================`);
   console.log('> Server started at http://localhost:' + PORT);
   console.log(`====================================`);
+  console.log(`aaaaaaaa`);
+  console.log(`bbbbbbbbb`);
 });
